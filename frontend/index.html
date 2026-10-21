@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi API TodoList</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Multi API TodoList</h1>
+
+    <!-- Login e cadastro -->
+    <section id="authSection">
+
+        <div class="card">
+            <h2>Entrar</h2>
+
+            <form id="loginForm">
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Seu e-mail"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Sua senha"
+                    required
+                >
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Criar conta</h2>
+
+            <form id="registerForm">
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Seu nome"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Seu e-mail"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Crie uma senha (mínimo 8 caracteres)"
+                    minlength="8"
+                    required
+                >
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+        <p id="authMessage" role="status"></p>
+    </section>
+
+    <!-- Aplicação protegida -->
+    <section id="appSection" class="hidden">
+
+        <div class="card user-bar">
+            <p>Olá, <strong id="userName"></strong>!</p>
+            <button type="button" id="logoutButton">Sair</button>
+        </div>
+
+        <div class="card">
+            <h2>Nova Tarefa</h2>
+
+            <form id="todoForm">
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Título"
+                    required
+                >
+
+                <textarea
+                    id="description"
+                    placeholder="Descrição"
+                ></textarea>
+
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Lista de Tarefas</h2>
+            <ul id="todoList"></ul>
+        </div>
+
+        <div class="card">
+            <h2>Estatísticas</h2>
+            <p>Total: <span id="total">0</span></p>
+            <p>Concluídas: <span id="completed">0</span></p>
+            <p>Pendentes: <span id="pending">0</span></p>
+        </div>
+
+        <p id="appMessage" role="status"></p>
+    </section>
+
+</div>
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+</html>
